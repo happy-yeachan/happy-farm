@@ -1,14 +1,17 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from users.views import UserViewSet, SignUpView
-from products.views import ProductViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from users.views import UserViewSet, SignUpView
+from products.views import ProductViewSet
+from orders.views import OrderViewSet
+
 
 router = DefaultRouter()
+router.register(r'orders', OrderViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'products', ProductViewSet)
 
