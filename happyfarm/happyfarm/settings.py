@@ -133,3 +133,7 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+from decouple import config
+
+imgbb_key = config('imgbb_key')
